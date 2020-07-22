@@ -4,7 +4,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import HomePage from "./Components/HomePage/HomePage";
 import MoviesPage from "./Components/MoviesPage/MoviesPage";
-// import MovieDetailsPage from "./Components/MovieDetailsPage/MovieDetailsPage";
+import MovieDetailsPage from "./Components/MovieDetailsPage/MovieDetailsPage";
+import MoviesResult from "./Components/MoviesResult/MoviesResult";
 
 export class App extends Component {
   render() {
@@ -14,6 +15,8 @@ export class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/movies" component={MoviesPage} />
+          <Route path="/movies/:result" component={MoviesResult} />
+          <Route path="/movie/:name" component={MovieDetailsPage} />
           <Redirect to="/" />
         </Switch>
       </div>

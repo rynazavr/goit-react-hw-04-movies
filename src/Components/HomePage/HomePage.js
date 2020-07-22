@@ -8,15 +8,16 @@ class HomePage extends Component {
   };
   componentDidMount() {
     trendingUrl().then((result) => {
-      console.log(result.data.results);
       this.setState({ trends: result.data.results });
     });
   }
 
   render() {
     const { trends } = this.state;
+    console.log(this.props);
     return (
       <div>
+        <p>Go Back</p>
         <h1 className={styles.h1}>Trending today</h1>
         <ul>
           {trends.map((trend) => (

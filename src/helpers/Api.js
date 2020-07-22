@@ -6,25 +6,21 @@ const api = process.env.REACT_APP_CLIENT_API_KEY;
 export const trendingUrl = () =>
   axios.get(`${mainUrl}trending/movie/day?api_key=${api}`);
 
-// export const trendingUrl = () => {
-//   return `${mainUrl}trending/movie/day?api_key=${api}`;
-// };
+export const movieFinderUrl = (query) =>
+  axios.get(
+    `${mainUrl}search/movie?api_key=${api}&language=en-US&page=1&include_adult=false&query=${query}`
+  );
 
-export const movieFinderUrl = (query) => {
-  return `${mainUrl}search/movie?api_key=${api}&language=en-US&query${query}&page=1&include_adult=false`;
-};
+export const movieDetails = (movieId) =>
+  axios.get(`${mainUrl}movie/${movieId}?api_key=${api}&language=en-US`);
 
-export const movieDetails = (movieId) => {
-  return `${mainUrl}movie/${movieId}?api_key=${api}&language=en-US`;
-};
+export const movieActors = (movieId) =>
+  axios.get(`${mainUrl}movie/${movieId}/credits?api_key=${api}`);
 
-export const movieActors = (movieId) => {
-  return `${mainUrl}movie/${movieId}/credits?api_key=${api}`;
-};
-
-export const movieReview = (movieId) => {
-  return `${mainUrl}movie/${movieId}/reviews?api_key=${api}&language=en-US&page=1`;
-};
+export const movieReview = (movieId) =>
+  axios.get(
+    `${mainUrl}movie/${movieId}/reviews?api_key=${api}&language=en-US&page=1`
+  );
 // https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
 // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
 // {
