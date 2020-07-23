@@ -1,0 +1,18 @@
+.img {
+  height: 300px;
+  margin-right: 10px;
+}
+.cont_upper_elem {
+  display: flex;
+  padding: 20px;
+  text-align: left;
+}
+.header {
+  font-size: 20px;
+}
+.desc {
+  font-size: 14px;
+}
+.subheader {
+  font-size: 16px;
+}

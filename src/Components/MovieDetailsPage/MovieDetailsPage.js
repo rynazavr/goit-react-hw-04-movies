@@ -4,6 +4,7 @@ import { movieDetails } from "../../helpers/Api";
 import { useParams } from "react-router-dom";
 // import Cast from "../Cast/Cast";
 // import Reviews from "../Reviews/Reviews";
+import styles from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [singleMovie, setMovie] = useState({});
@@ -20,20 +21,25 @@ const MovieDetailsPage = () => {
   console.log("singleMovie", singleMovie);
   return (
     <div>
-      <img
-        src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${singleMovie.poster_path}`}
-      ></img>
-      <h1>{singleMovie.original_title}</h1>
-      <p>
-        <span>User score: </span>
-        {singleMovie.vote_average}
-      </p>
-      <h3>Overview</h3>
-      <p>{singleMovie.overview}</p>
-      <h3>Genres</h3>
-      <ul>
-        <li></li>
-      </ul>
+      <div className={styles.cont_upper_elem}>
+        <img
+          className={styles.img}
+          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${singleMovie.poster_path}`}
+        ></img>
+        <div>
+          <h1 className={styles.header}>{singleMovie.original_title}</h1>
+          <p className={styles.desc}>
+            <span>User score: </span>
+            {singleMovie.vote_average}
+          </p>
+          <h3 className={styles.subheader}>Overview</h3>
+          <p className={styles.desc}>{singleMovie.overview}</p>
+          <h3 className={styles.subheader}>Genres</h3>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
@@ -48,7 +54,4 @@ export default MovieDetailsPage;
 // }
 //       </ul >
 
-// <Switch>
-//   <Route exact path={routes.MOVIE_CAST} component={Cast} />
-//   <Route exact path={routes.MOVIE_REVIEWS} component={Reviews} />
-// </Switch>
+//

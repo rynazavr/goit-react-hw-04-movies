@@ -11,6 +11,9 @@ class HomePage extends Component {
       this.setState({ trends: result.data.results });
     });
   }
+  // goBack = () => {
+  //   history.goBack();
+  // };
 
   render() {
     const { trends } = this.state;
