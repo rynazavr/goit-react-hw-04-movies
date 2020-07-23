@@ -16,3 +16,25 @@
 .subheader {
   font-size: 16px;
 }
+.submenu {
+  font-weight: bold;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+}
+.submenu:hover {
+  color: #fff;
+}
+.submenu:visited {
+  color: #fff;
+}
+.submenu:active {
+  color: #fff;
+}
+.submenu_holder {
+  list-style: none;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #0d3ddb;
+}

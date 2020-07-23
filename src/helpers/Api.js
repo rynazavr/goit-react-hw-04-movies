@@ -18,9 +18,8 @@ export const movieActors = (movieId) =>
   axios.get(`${mainUrl}movie/${movieId}/credits?api_key=${api}`);
 
 export const movieReview = (movieId) =>
-  axios.get(
-    `${mainUrl}movie/${movieId}/reviews?api_key=${api}&language=en-US&page=1`
-  );
+  axios.get(`${mainUrl}movie/${movieId}/reviews?api_key=${api}`);
+
 // https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
 // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
 // {

@@ -4,12 +4,12 @@ import styles from "../MoviesResult/MoviesResult.module.css";
 
 const MoviesResult = ({ movie }) => {
   const history = useHistory();
-  console.log("history", history);
+  // console.log("history", history);
   const redirectToMoviePage = () => {
     history.push(`/movie/${movie.id}`);
   };
-  console.log("historyMoviesResult", history);
-  console.log("movie.id", movie.id);
+  // console.log("historyMoviesResult", history);
+  // console.log("movie.id", movie.id);
   return (
     <div>
       <ul>
