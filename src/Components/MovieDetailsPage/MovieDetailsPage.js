@@ -19,13 +19,17 @@ const MovieDetailsPage = () => {
   }, []);
 
   console.log("singleMovie", singleMovie);
+
   return (
     <div>
       <div className={styles.cont_upper_elem}>
         <img
           className={styles.img}
-          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${singleMovie.poster_path}`}
-        ></img>
+          src={
+            singleMovie.poster_path &&
+            `https://image.tmdb.org/t/p/original${singleMovie.poster_path}`
+          }
+        />
         <div>
           <h1 className={styles.header}>{singleMovie.original_title}</h1>
           <p className={styles.desc}>
@@ -35,9 +39,9 @@ const MovieDetailsPage = () => {
           <h3 className={styles.subheader}>Overview</h3>
           <p className={styles.desc}>{singleMovie.overview}</p>
           <h3 className={styles.subheader}>Genres</h3>
-          <ul>
-            <li></li>
-          </ul>
+          {singleMovie.genres && (
+            <p>{singleMovie.genres.map((genre) => genre.name).join(", ")}</p>
+          )}
         </div>
       </div>
     </div>
@@ -45,13 +49,3 @@ const MovieDetailsPage = () => {
 };
 
 export default MovieDetailsPage;
-
-// ul >
-// {
-//   singleMovie.genres.map((genre) => (
-//     <li key={genre.id}>{genre.name}</li>
-//   ))
-// }
-//       </ul >
-
-//
