@@ -20,6 +20,7 @@ const Cast = ({ props, singleMovieId }) => {
               <li>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${casty.profile_path}`}
+                  alt="no image"
                   className={styles.image}
                 />
               </li>

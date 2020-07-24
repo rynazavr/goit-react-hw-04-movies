@@ -15,7 +15,6 @@ class HomePage extends Component {
 
   render() {
     const { trends } = this.state;
-    // console.log(this.props);
     return (
       <div>
         <p>Go Back</p>
@@ -30,11 +29,3 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
-// <ul>
-//   {trends.map((trend) => (
-//     <li className={styles.li} key={trend.id}>
-//       {trend.title}
-//     </li>
-//   ))}
-// </ul>
