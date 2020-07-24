@@ -44,6 +44,7 @@
   display: block;
   top: 6px;
   left: 6px;
+  cursor: pointer;
 }
 .cont_btn_back {
   position: relative;

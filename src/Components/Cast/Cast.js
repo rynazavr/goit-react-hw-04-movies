@@ -3,25 +3,24 @@ import styles from "./Cast.module.css";
 import { movieActors } from "../../helpers/Api";
 
 const Cast = ({ props, singleMovieId }) => {
-  console.log("singleMovieID", singleMovieId);
   const [cast, setCast] = useState([]);
   useEffect(() => {
     movieActors(singleMovieId)
       .then((response) => setCast(response.data.cast))
       .catch((error) => console.log(error));
-  }, []);
-  console.log("cast", cast);
+  }, [singleMovieId]);
+
   return (
     <div>
       {!!cast.length && <p>loading...</p> && (
         <div>
           {cast.map((casty) => (
-            <ul>
+            <ul key={casty.id}>
               <li>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${casty.profile_path}`}
                   alt="no image"
-                  className={styles.image}
+                  className={styles.imagex}
                 />
               </li>
               <li className={styles.li}>

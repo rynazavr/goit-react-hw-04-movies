@@ -8,20 +8,20 @@ const Reviews = ({ props, singleMovieId }) => {
     movieReview(singleMovieId)
       .then((response) => setReviews(response.data.results))
       .catch((error) => console.log(error));
-  }, []);
-  console.log("reviews", reviews);
+  }, [singleMovieId]);
+
   return (
     <div>
-      {!!reviews.length && <p>loading...</p> && (
+      {(!!reviews.length && (
         <ul>
           {reviews.map((review) => (
-            <li>
+            <li key={review.id}>
               <p>Author: {review.author}</p>
               <p>{review.content}</p>
             </li>
           ))}
         </ul>
-      )}
+      )) || <p>no reviews</p>}
     </div>
   );
 };
