@@ -17,7 +17,6 @@ class HomePage extends Component {
     const { trends } = this.state;
     return (
       <div>
-        <p>Go Back</p>
         <h1 className={styles.h1}>Trending today</h1>
 
         {trends.map((trend) => (

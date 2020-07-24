@@ -10,16 +10,6 @@ class MoviesPage extends Component {
     error: false,
   };
 
-  // componentDidMount() {
-  //   const { location } = this.props;
-  //   const params = queryString.parse(location.search);
-  //   if (Object.keys(params).length) {
-  //     this.getUsers(params.userName);
-  //   } else {
-  //     this.getUsers();
-  //   }
-  // }
-
   inputHandler = ({ target }) => {
     const { value } = target;
     this.setState({

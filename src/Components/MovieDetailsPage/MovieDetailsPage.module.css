@@ -38,3 +38,14 @@
   justify-content: space-around;
   background-color: #0d3ddb;
 }
+.goback_btn {
+  position: absolute;
+  width: 30px;
+  display: block;
+  top: 6px;
+  left: 6px;
+}
+.cont_btn_back {
+  position: relative;
+  height: 26px;
+}

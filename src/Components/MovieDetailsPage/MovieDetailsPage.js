@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Switch, Route, useRouteMatch } from "react-router-dom";
+import {
+  NavLink,
+  Switch,
+  Route,
+  useRouteMatch,
+  useHistory,
+} from "react-router-dom";
 import { movieDetails } from "../../helpers/Api";
 import { useParams } from "react-router-dom";
 import Cast from "../Cast/Cast";
 import Reviews from "../Reviews/Reviews";
 import styles from "./MovieDetailsPage.module.css";
+import arrow from "./back_ico.png";
 
 const MovieDetailsPage = () => {
   const [singleMovie, setMovie] = useState({});
@@ -12,7 +19,7 @@ const MovieDetailsPage = () => {
   const matchWithHooks = useRouteMatch();
   const hookPath = matchWithHooks.path;
   const url = matchWithHooks.url;
-  console.log("matchWithHooks", matchWithHooks);
+  const history = useHistory();
 
   useEffect(() => {
     movieDetails(movieId)
@@ -20,10 +27,15 @@ const MovieDetailsPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log("singleMovie", singleMovie);
+  const goBack = () => {
+    history.goBack();
+  };
 
   return (
     <div>
+      <div className={styles.cont_btn_back}>
+        <img src={arrow} className={styles.goback_btn} onClick={goBack} />
+      </div>
       <div className={styles.cont_upper_elem}>
         <img
           alt={singleMovie.original_title}
