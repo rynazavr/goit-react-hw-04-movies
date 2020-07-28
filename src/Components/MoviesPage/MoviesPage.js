@@ -10,6 +10,14 @@ class MoviesPage extends Component {
     error: false,
   };
 
+  componentDidMount() {
+    console.log("Q", this.props.location);
+    if (this.props.location.query) {
+      const search = this.props.location.query;
+      this.getMovies(search);
+    }
+  }
+
   inputHandler = ({ target }) => {
     const { value } = target;
     this.setState({

@@ -2,7 +2,6 @@
   "name": "goit-react-hw-04-movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rynazavr.github.io/goit-react-hw-04-movies",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/lab": "^4.0.0-alpha.56",
@@ -21,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify deploy -p",
     "predeploy": "npm run build"
   },
   "eslintConfig": {

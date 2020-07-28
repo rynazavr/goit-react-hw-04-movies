@@ -5,6 +5,7 @@ import {
   Route,
   useRouteMatch,
   useHistory,
+  useLocation,
 } from "react-router-dom";
 import { movieDetails } from "../../helpers/Api";
 import { useParams } from "react-router-dom";
@@ -15,20 +16,30 @@ import arrow from "./back_ico.png";
 
 const MovieDetailsPage = () => {
   const [singleMovie, setMovie] = useState({});
+  const [from, setFrom] = useState("");
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
   const movieId = useParams().name;
   const matchWithHooks = useRouteMatch();
   const hookPath = matchWithHooks.path;
   const url = matchWithHooks.url;
   const history = useHistory();
+  const location = useLocation();
+  console.log("locationY", location);
 
   useEffect(() => {
     movieDetails(movieId)
       .then((response) => setMovie(response.data))
       .catch((error) => console.log(error));
-  }, [movieId]);
+    if (location.state) {
+      setFrom(location.state.from);
+      setSearch(location.state.search);
+      setQuery(location.state.query);
+    }
+  }, [movieId, location]);
 
   const goBack = () => {
-    history.goBack();
+    history.push({ pathname: from, search, query });
   };
 
   return (
